@@ -92,3 +92,26 @@ const (
 	StatusNotExtended                   = 510 // RFC 2774, 7
 	StatusNetworkAuthenticationRequired = 511 // RFC 6585, 6
 )
+
+<!-- Connect to mysql db -->
+	MySql Driver: _"github.com/go-sql-driver/mysql"
+	go get github.com/go-sql-driver/mysql
+
+		var (
+		Users_db *sql.DB
+		)
+
+	func init() {
+		datasourceName := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8",
+			"root",       //mysql username
+			"chengsoft",  //mysql password
+			"127.0.0.1:3306",  //mysql localhost
+			"golang_db1", //mysql database
+		)
+		var err error
+		Users_db, err = sql.Open("mysql", datasourceName)
+		if err != nil {
+			//panic function is end the program
+			panic(err)
+		}
+	}
