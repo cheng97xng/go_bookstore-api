@@ -115,3 +115,14 @@ const (
 			panic(err)
 		}
 	}
+
+	<!-- create user table structure-->
+
+	CREATE TABLE users(
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(35) NULL,
+    last_name VARCHAR(30) NULL,
+    email VARCHAR(60) NULL,
+    date_created VARCHAR(45) NULL,
+    PRIMARY KEY(id),
+    UNIQUE INDEX `email_UNIQUE` (`email` ASC));
