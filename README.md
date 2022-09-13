@@ -126,3 +126,7 @@ const (
     date_created VARCHAR(45) NULL,
     PRIMARY KEY(id),
     UNIQUE INDEX `email_UNIQUE` (`email` ASC));
+
+
+	<!-- Access to mysql from another pc by terminal -->
+	Enter as: mysql -u username -h host -p
